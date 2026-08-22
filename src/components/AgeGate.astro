@@ -1,53 +1,21 @@
-<div id="age-gate" class="gate-backdrop" hidden>
-  <section class="gate-card" role="dialog" aria-modal="true" aria-labelledby="age-title">
+<div id="ageGate" class="gate" hidden>
+  <section class="gate-card" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
     <p class="eyebrow">ACCESS & RISK NOTICE</p>
-    <h2 id="age-title">18+ ONLY</h2>
-    <p class="lead">BoyKingTut.com is intended for adults age 18 and older.</p>
-
+    <h2 id="gateTitle">18+ ONLY</h2>
+    <p>BoyKingTut.com is intended for adults age 18 and older.</p>
     <div class="gate-copy">
       <p><strong>Not Financial Advice.</strong> Cryptocurrency and leveraged trading are high risk and can result in partial or total financial loss.</p>
-      <p><strong>Protect your crypto.</strong> Keep SOL and other crypto in a wallet you control. Never share a seed phrase, private key, or recovery phrase.</p>
-      <p>BoyKingTut.com is not responsible for losses caused by incorrect addresses, compromised wallets, lost credentials, exchange failures, network problems, unauthorized transactions, or user error, subject to applicable law.</p>
+      <p><strong>Protect your crypto.</strong> Keep SOL and other crypto in a wallet you control. Never share a seed phrase, recovery phrase or private key.</p>
+      <p>BoyKingTut.com is not responsible for losses caused by incorrect addresses, compromised wallets, lost credentials, exchange failures, network problems, unauthorized transactions or user error, subject to applicable law.</p>
     </div>
-
-    <label class="gate-check">
-      <input id="age-confirm" type="checkbox" />
-      <span>I confirm I am 18+ and understand the risk notice.</span>
-    </label>
-
-    <div class="gate-actions">
-      <button id="age-agree" class="btn btn-primary" type="button" disabled>AGREE & ENTER</button>
-      <button id="age-disagree" class="btn btn-ghost" type="button">DISAGREE & LEAVE</button>
+    <label class="check"><input id="ageCheck" type="checkbox" /> <span>I confirm I am 18+ and understand this risk notice.</span></label>
+    <div class="actions">
+      <button id="ageAgree" class="btn gold" disabled>AGREE & ENTER</button>
+      <button id="ageLeave" class="btn outline">DISAGREE & LEAVE</button>
     </div>
   </section>
 </div>
-
 <script is:inline>
-  const KEY = "bkt_age_gate_v1";
-  const gate = document.getElementById("age-gate");
-  const check = document.getElementById("age-confirm");
-  const agree = document.getElementById("age-agree");
-  const disagree = document.getElementById("age-disagree");
-
-  if (gate && check && agree && disagree) {
-    if (sessionStorage.getItem(KEY) !== "accepted") {
-      gate.hidden = false;
-      document.body.classList.add("locked");
-    }
-
-    check.addEventListener("change", () => {
-      agree.disabled = !check.checked;
-    });
-
-    agree.addEventListener("click", () => {
-      if (!check.checked) return;
-      sessionStorage.setItem(KEY, "accepted");
-      gate.hidden = true;
-      document.body.classList.remove("locked");
-    });
-
-    disagree.addEventListener("click", () => {
-      window.location.href = "https://www.google.com/";
-    });
-  }
+  const k="bkt_age_gate_v2",g=document.getElementById("ageGate"),c=document.getElementById("ageCheck"),a=document.getElementById("ageAgree"),l=document.getElementById("ageLeave");
+  if(g&&c&&a&&l){if(sessionStorage.getItem(k)!=="ok"){g.hidden=false;document.body.classList.add("locked")};c.addEventListener("change",()=>a.disabled=!c.checked);a.addEventListener("click",()=>{sessionStorage.setItem(k,"ok");g.hidden=true;document.body.classList.remove("locked")});l.addEventListener("click",()=>location.href="https://www.google.com/")}
 </script>

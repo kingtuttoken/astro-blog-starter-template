@@ -1,0 +1,17 @@
+---
+const { user = null } = Astro.props;
+---
+<header class="nav-wrap">
+  <a class="logo" href="/"><span class="logo-mark">𓂀</span><span><b>BOY KING TUT</b><small>ETERNAL SPARK</small></span></a>
+  <button id="menuBtn" class="menu-btn" aria-controls="navMenu" aria-expanded="false">☰</button>
+  <nav id="navMenu" class="nav-menu">
+    <a href="/#crypto">Crypto</a><a href="/#advertising">Advertising</a><a href="/#affiliate">Affiliates</a><a href="/#metaverse">Metaverse</a><a href="/#egypt">Egypt</a><a href="/#reddit">Reddit</a><a href="/#tiktok">TikTok</a><a href="/#faq">FAQ</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="discord-btn" href="https://discord.gg/HA73BUfJ67" target="_blank" rel="noopener">Discord</a>
+    {user ? <a class="account-btn" href="/dashboard">Dashboard</a> : <a class="account-btn" href="/auth/google?role=customer">Google Login</a>}
+  </div>
+</header>
+<script is:inline>
+  const b=document.getElementById('menuBtn'),n=document.getElementById('navMenu');if(b&&n)b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));n.classList.toggle('open',!o)});
+</script>
