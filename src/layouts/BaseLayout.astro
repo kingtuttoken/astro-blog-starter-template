@@ -1,20 +1,39 @@
 ---
 import "../styles/global.css";
-const { title = "BoyKingTut.com — Eternal Spark", description = "Financial Domination Quantum: crypto, affiliates, advertising, metaverse, Egypt, Reddit and TikTok." } = Astro.props;
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "BoyKingTut.com — Eternal Spark",
+  description = "Boy King Tut Eternal Spark: crypto systems, affiliates, local advertising, Second Life metaverse, Egypt information, Reddit articles and TikTok updates.",
+} = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="description" content={description} />
-  <meta name="theme-color" content="#05070a" />
-  <meta name="color-scheme" content="dark" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/images/hero-main.jpg" />
-  <title>{title}</title>
-</head>
-<body><slot /></body>
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#03080e" />
+    <meta name="color-scheme" content="dark" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <slot />
+  </body>
 </html>
