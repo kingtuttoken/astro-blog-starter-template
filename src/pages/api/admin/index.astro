@@ -1,0 +1,118 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import Nav from "../../../components/Nav.astro";
+import { getCurrentUser, getEnv } from "../../../lib/auth";
+
+export const prerender = false;
+
+const user = await getCurrentUser(Astro);
+
+if (!user) {
+  return Astro.redirect("/auth/google?role=customer");
+}
+
+if (!["admin", "owner"].includes(user.role)) {
+  return Astro.redirect("/dashboard");
+}
+
+const env = getEnv(Astro.locals);
+
+const total: any = await env.DB
+  .prepare("SELECT COUNT(*) count FROM users")
+  .first();
+
+const affiliates: any = await env.DB
+  .prepare("SELECT COUNT(*) count FROM users WHERE role='affiliate'")
+  .first();
+
+const customers: any = await env.DB
+  .prepare("SELECT COUNT(*) count FROM users WHERE role='customer'")
+  .first();
+
+const recent: any = await env.DB
+  .prepare(`
+    SELECT
+      id,
+      email,
+      name,
+      role,
+      created_at,
+      last_login_at
+    FROM users
+    ORDER BY id DESC
+    LIMIT 20
+  `)
+  .all();
+---
+
+<BaseLayout title="Owner Admin — BoyKingTut.com">
+  <Nav user={user} />
+
+  <main class="dashboard-page">
+    <section class="dash-hero">
+      <div>
+        <p class="eyebrow">OWNER / ADMIN</p>
+        <h1>System Control</h1>
+        <p>Google-authenticated owner access.</p>
+      </div>
+
+      <a class="btn outline" href="/dashboard">
+        Back to Dashboard
+      </a>
+    </section>
+
+    <section class="dash-grid">
+      <article>
+        <small>TOTAL USERS</small>
+        <h2>{total?.count || 0}</h2>
+      </article>
+
+      <article>
+        <small>CUSTOMERS</small>
+        <h2>{customers?.count || 0}</h2>
+      </article>
+
+      <article>
+        <small>AFFILIATES</small>
+        <h2>{affiliates?.count || 0}</h2>
+      </article>
+
+      <article>
+        <small>SYSTEM</small>
+        <h2>ONLINE</h2>
+      </article>
+    </section>
+
+    <section class="dash-panel">
+      <p class="eyebrow">RECENT ACCOUNTS</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Created</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {
+              recent?.results?.map((r: any) => (
+                <tr>
+                  <td>{r.id}</td>
+                  <td>{r.name || "—"}</td>
+                  <td>{r.email}</td>
+                  <td>{r.role}</td>
+                  <td>{r.created_at}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
