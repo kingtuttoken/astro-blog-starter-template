@@ -22,16 +22,21 @@ const user = await getCurrentUser(Astro);
 
       <div class="hero-copy">
         <p class="kicker">WELCOME TO THE SYSTEM</p>
-        <h1>QUANTUM<br/>FINANCIAL<br/><span>DOMINATION</span></h1>
+        <h1>QUANTUM<br />FINANCIAL<br /><span>DOMINATION</span></h1>
+
         <p class="hero-text">
           A complete ecosystem for crypto systems, local advertising, affiliate opportunities,
           Reddit articles, TikTok updates, Second Life metaverse access, and Egypt travel information.
         </p>
+
         <div class="actions">
           <a class="btn btn-gold" href="#services">EXPLORE THE SYSTEM</a>
-          {user
-            ? <a class="btn btn-outline" href="/dashboard">OPEN DASHBOARD</a>
-            : <a class="btn btn-outline" href="/auth/google?role=customer">JOIN / LOGIN</a>}
+
+          {
+            user
+              ? <a class="btn btn-outline" href="/dashboard">OPEN DASHBOARD</a>
+              : <a class="btn btn-outline" href="/auth/google?role=customer">JOIN / LOGIN</a>
+          }
         </div>
 
         <div class="trust-row">
@@ -44,16 +49,52 @@ const user = await getCurrentUser(Astro);
       </div>
 
       <aside class="system-overview">
-        <div class="overview-title"><span>SYSTEM OVERVIEW</span><b>● LIVE</b></div>
-        <div class="overview-grid">
-          <div><small>ACCOUNT SYSTEM</small><strong>GOOGLE</strong><span>OAuth + D1</span></div>
-          <div><small>PAYMENTS</small><strong>SOLANA</strong><span>On-chain verification</span></div>
-          <div><small>AFFILIATES</small><strong>$0 TO JOIN</strong><span>Recurring eligible earnings</span></div>
-          <div><small>METAVERSE</small><strong>PUBLIC</strong><span>Wild Hollow</span></div>
-          <div><small>DISCORD</small><strong>CONNECTED</strong><span>Community + alerts</span></div>
-          <div><small>PLATFORM</small><strong>ASTRO</strong><span>Cloudflare ready</span></div>
+        <div class="overview-title">
+          <span>SYSTEM OVERVIEW</span>
+          <b>● LIVE</b>
         </div>
-        <a class="overview-link" href="/dashboard">VIEW ACCOUNT DASHBOARD →</a>
+
+        <div class="overview-grid">
+          <div>
+            <small>ACCOUNT SYSTEM</small>
+            <strong>GOOGLE</strong>
+            <span>OAuth + D1</span>
+          </div>
+
+          <div>
+            <small>PAYMENTS</small>
+            <strong>SOLANA</strong>
+            <span>On-chain verification</span>
+          </div>
+
+          <div>
+            <small>AFFILIATES</small>
+            <strong>$0 TO JOIN</strong>
+            <span>Recurring eligible earnings</span>
+          </div>
+
+          <div>
+            <small>METAVERSE</small>
+            <strong>PUBLIC</strong>
+            <span>Wild Hollow</span>
+          </div>
+
+          <div>
+            <small>DISCORD</small>
+            <strong>CONNECTED</strong>
+            <span>Community + alerts</span>
+          </div>
+
+          <div>
+            <small>PLATFORM</small>
+            <strong>ASTRO</strong>
+            <span>Cloudflare ready</span>
+          </div>
+        </div>
+
+        <a class="overview-link" href="/dashboard">
+          VIEW ACCOUNT DASHBOARD →
+        </a>
       </aside>
     </section>
 
@@ -61,40 +102,87 @@ const user = await getCurrentUser(Astro);
       <header class="section-heading">
         <p class="kicker">OUR SERVICES</p>
         <h2>Everything in one place</h2>
-        <p>Each area has its own workflow while sharing the same account, payment, dashboard and community system.</p>
+        <p>
+          Each area has its own workflow while sharing the same account,
+          payment, dashboard and community system.
+        </p>
       </header>
 
       <div class="service-grid">
         <article id="crypto" class="service-card">
-          <img src="/images/crypto-system.jpg" alt="Online crypto system visual" />
+          <img
+            src="/images/crypto-system.jpg"
+            alt="Online crypto system visual"
+          />
+
           <div class="service-body">
             <span class="status green">LIVE TRADING</span>
             <h3>Online Crypto System</h3>
-            <p>Experienced-trader Discord alerts, account access and the Solo Leverage Alarm ecosystem.</p>
-            <div class="chips"><span>Basic $50</span><span>Pro $150</span><span>BTC included</span></div>
+
+            <p>
+              Experienced-trader Discord alerts, account access and the
+              Solo Leverage Alarm ecosystem.
+            </p>
+
+            <div class="chips">
+              <span>Basic $50</span>
+              <span>Pro $150</span>
+              <span>BTC included</span>
+            </div>
+
             <a href="#solo">Explore Crypto →</a>
           </div>
         </article>
 
         <article id="advertising" class="service-card">
-          <img src="/images/local-advertising.jpg" alt="Local business advertising visual" />
+          <img
+            src="/images/local-advertising.jpg"
+            alt="Local business advertising visual"
+          />
+
           <div class="service-body">
             <span class="status blue">LOCAL POWER</span>
             <h3>Local Advertising</h3>
-            <p>Help independent restaurants, pizza shops, cafés, barbers, salons, stores and private businesses get visibility.</p>
-            <div class="chips"><span>15 miles</span><span>50-mile upgrade</span><span>Progress reports</span></div>
+
+            <p>
+              Help independent restaurants, pizza shops, cafés, barbers,
+              salons, stores and private businesses get visibility.
+            </p>
+
+            <div class="chips">
+              <span>15 miles</span>
+              <span>50-mile upgrade</span>
+              <span>Progress reports</span>
+            </div>
+
             <a href="#campaign">View Advertising →</a>
           </div>
         </article>
 
         <article id="affiliate" class="service-card">
-          <img src="/images/affiliate-network.jpg" alt="Affiliate and local business network visual" />
+          <img
+            src="/images/affiliate-network.jpg"
+            alt="Affiliate and local business network visual"
+          />
+
           <div class="service-body">
             <span class="status purple">EARN MORE</span>
             <h3>Affiliates / Make Money</h3>
-            <p>Bring qualifying local businesses to the platform using your code, brochure and dashboard.</p>
-            <div class="chips"><span>$0 signup</span><span>$0 monthly fee</span><span>Paid in SOL</span></div>
-            <a href="/auth/google?role=affiliate">Join Affiliate →</a>
+
+            <p>
+              Bring qualifying local businesses to the platform using your
+              code, brochure and dashboard.
+            </p>
+
+            <div class="chips">
+              <span>$0 signup</span>
+              <span>$0 monthly fee</span>
+              <span>Paid in SOL</span>
+            </div>
+
+            <a href="/auth/google?role=affiliate">
+              Join Affiliate →
+            </a>
           </div>
         </article>
       </div>
@@ -102,34 +190,83 @@ const user = await getCurrentUser(Astro);
 
     <section id="solo" class="solo-wrap">
       <div class="solo-visual">
-        <img src="/images/solo-machine.jpg" alt="Solo Leverage Alarm Machine" />
+        <img
+          src="/images/solo-machine.jpg"
+          alt="Solo Leverage Alarm Machine"
+        />
       </div>
+
       <div class="solo-info">
         <p class="kicker">PREMIUM CRYPTO SYSTEM</p>
-        <h2>Solo Leverage<br/><span>Alarm Machine</span></h2>
+
+        <h2>
+          Solo Leverage<br />
+          <span>Alarm Machine</span>
+        </h2>
+
         <p>
           Dedicated alert hardware and software for experienced leverage traders.
-          A leverage-capable exchange account and reliable always-on internet connection are required.
+          A leverage-capable exchange account and reliable always-on internet
+          connection are required.
         </p>
 
         <div class="price-strip">
-          <div><strong>$300</strong><small>Machine</small></div>
-          <div><strong>BTC</strong><small>Included</small></div>
-          <div><strong>+$50</strong><small>Each Extra Pair</small></div>
-          <div><strong>$150–$300</strong><small>Monthly Service</small></div>
+          <div>
+            <strong>$300</strong>
+            <small>Machine</small>
+          </div>
+
+          <div>
+            <strong>BTC</strong>
+            <small>Included</small>
+          </div>
+
+          <div>
+            <strong>+$50</strong>
+            <small>Each Extra Pair</small>
+          </div>
+
+          <div>
+            <strong>$150–$300</strong>
+            <small>Monthly Service</small>
+          </div>
         </div>
 
         <div class="risk-box">
           <b>HIGH-RISK LEVERAGE NOTICE</b>
-          <p>Timing matters. Cable, fiber, Starlink or reliable always-on 5G/Wi-Fi is recommended. Missed connectivity can mean missed alerts. No profit or performance is guaranteed.</p>
+
+          <p>
+            Timing matters. Cable, fiber, Starlink or reliable always-on
+            5G/Wi-Fi is recommended. Missed connectivity can mean missed
+            alerts. No profit or performance is guaranteed.
+          </p>
         </div>
       </div>
+
       <aside class="solo-status">
-        <div><span>DEFAULT PAIR</span><b>BTC</b></div>
-        <div><span>DISCORD</span><b class="ok">CONNECTED</b></div>
-        <div><span>PAYMENT</span><b>SOLANA</b></div>
-        <div><span>EXCHANGE</span><b>REQUIRED</b></div>
-        <a href="#pricing" class="btn btn-gold">VIEW PRICING</a>
+        <div>
+          <span>DEFAULT PAIR</span>
+          <b>BTC</b>
+        </div>
+
+        <div>
+          <span>DISCORD</span>
+          <b class="ok">CONNECTED</b>
+        </div>
+
+        <div>
+          <span>PAYMENT</span>
+          <b>SOLANA</b>
+        </div>
+
+        <div>
+          <span>EXCHANGE</span>
+          <b>REQUIRED</b>
+        </div>
+
+        <a href="#pricing" class="btn btn-gold">
+          VIEW PRICING
+        </a>
       </aside>
     </section>
 
@@ -137,49 +274,140 @@ const user = await getCurrentUser(Astro);
       <header class="section-heading">
         <p class="kicker">HOW IT WORKS</p>
         <h2>From brochure to active campaign</h2>
-        <p>The affiliate introduces the service; the platform manages the structured onboarding and tracking workflow.</p>
+
+        <p>
+          The affiliate introduces the service; the platform manages the
+          structured onboarding and tracking workflow.
+        </p>
       </header>
 
       <div class="steps">
-        <article><span>01</span><h3>Request business material</h3><p>Ask for a menu, brochure, flyer, price list or service sheet.</p></article>
-        <article><span>02</span><h3>Upload current image</h3><p>Use the latest business material and confirm current pricing and offers.</p></article>
-        <article><span>03</span><h3>Select target area</h3><p>U.S.: ZIP + radius. International: city + country, with postal area if appropriate.</p></article>
-        <article><span>04</span><h3>Choose package</h3><p>Help the owner select the campaign that fits the business.</p></article>
-        <article><span>05</span><h3>Pay with Solana</h3><p>Live SOL/USD quote, five-minute lock, and blockchain verification.</p></article>
-        <article><span>06</span><h3>Monitor progress</h3><p>View account activity, notes, subscription status and eligible commissions.</p></article>
+        <article>
+          <span>01</span>
+          <h3>Request business material</h3>
+          <p>
+            Ask for a menu, brochure, flyer, price list or service sheet.
+          </p>
+        </article>
+
+        <article>
+          <span>02</span>
+          <h3>Upload current image</h3>
+          <p>
+            Use the latest business material and confirm current pricing and offers.
+          </p>
+        </article>
+
+        <article>
+          <span>03</span>
+          <h3>Select target area</h3>
+          <p>
+            U.S.: ZIP + radius. International: city + country, with postal area if appropriate.
+          </p>
+        </article>
+
+        <article>
+          <span>04</span>
+          <h3>Choose package</h3>
+          <p>
+            Help the owner select the campaign that fits the business.
+          </p>
+        </article>
+
+        <article>
+          <span>05</span>
+          <h3>Pay with Solana</h3>
+          <p>
+            Live SOL/USD quote, five-minute lock, and blockchain verification.
+          </p>
+        </article>
+
+        <article>
+          <span>06</span>
+          <h3>Monitor progress</h3>
+          <p>
+            View account activity, notes, subscription status and eligible commissions.
+          </p>
+        </article>
       </div>
 
-      <div class="disclaimer-strip">Advertising performance varies by business, market, location, offer, competition and season. Specific results are not guaranteed.</div>
+      <div class="disclaimer-strip">
+        Advertising performance varies by business, market, location, offer,
+        competition and season. Specific results are not guaranteed.
+      </div>
     </section>
 
     <section class="portal-grid">
       <article id="discord" class="portal-card discord-card">
-        <img src="/images/discord-community.jpg" alt="Discord community visual" />
+        <img
+          src="/images/discord-community.jpg"
+          alt="Discord community visual"
+        />
+
         <div>
           <p class="kicker">JOIN OUR COMMUNITY</p>
           <h3>Discord Community</h3>
-          <p>Crypto access, affiliate onboarding, renewal reminders, system updates and paid-order notices.</p>
-          <a class="btn btn-green" href="https://discord.gg/HA73BUfJ67" target="_blank" rel="noopener noreferrer">JOIN DISCORD</a>
+
+          <p>
+            Crypto access, affiliate onboarding, renewal reminders,
+            system updates and paid-order notices.
+          </p>
+
+          <a
+            class="btn btn-green"
+            href="https://discord.gg/HA73BUfJ67"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JOIN DISCORD
+          </a>
         </div>
       </article>
 
       <article id="metaverse" class="portal-card">
-        <img src="/images/metaverse-wild-hollow.jpg" alt="Second Life Wild Hollow metaverse visual" />
+        <img
+          src="/images/metaverse-wild-hollow.jpg"
+          alt="Second Life Wild Hollow metaverse visual"
+        />
+
         <div>
           <p class="kicker purple-text">STEP INTO THE METAVERSE</p>
           <h3>Second Life Metaverse</h3>
-          <p>Public access to Wild Hollow — coordinates 91 / 153 / 2451, desktop and supported mobile access.</p>
-          <a class="btn btn-purple" href="https://maps.secondlife.com/secondlife/Wild%20Hollow/91/153/2451" target="_blank" rel="noopener noreferrer">TELEPORT NOW</a>
+
+          <p>
+            Public access to Wild Hollow — coordinates 91 / 153 / 2451,
+            desktop and supported mobile access.
+          </p>
+
+          <a
+            class="btn btn-purple"
+            href="https://maps.secondlife.com/secondlife/Wild%20Hollow/91/153/2451"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            TELEPORT NOW
+          </a>
         </div>
       </article>
 
       <article id="egypt" class="portal-card">
-        <img src="/images/egypt-information.jpg" alt="Egypt information and educational travel visual" />
+        <img
+          src="/images/egypt-information.jpg"
+          alt="Egypt information and educational travel visual"
+        />
+
         <div>
           <p class="kicker">EXPLORE EGYPT</p>
           <h3>Egypt Information & Travel</h3>
-          <p>G.E.M., Giza, Abydos, Luxor, Saqqara, Dendera, Aswan and Abu Simbel — information and education only.</p>
-          <a class="btn btn-gold" href="#egyptNotice">EXPLORE EGYPT</a>
+
+          <p>
+            G.E.M., Giza, Abydos, Luxor, Saqqara, Dendera, Aswan and
+            Abu Simbel — information and education only.
+          </p>
+
+          <a class="btn btn-gold" href="#egyptNotice">
+            EXPLORE EGYPT
+          </a>
         </div>
       </article>
     </section>
@@ -188,13 +416,29 @@ const user = await getCurrentUser(Astro);
       <div>
         <p class="kicker">KNOWLEDGE HUB</p>
         <h2>Reddit Articles + 400+ Memoirs</h2>
-        <p>Featured articles, memoirs, observations and updates, refreshed as material becomes available.</p>
+
+        <p>
+          Featured articles, memoirs, observations and updates,
+          refreshed as material becomes available.
+        </p>
       </div>
+
       <div id="tiktok">
         <p class="kicker">TIKTOK</p>
         <h2>Updates & Live Streams</h2>
-        <p>Follow <b>@19nobodyknows22</b> for video updates and live streams.</p>
-        <a class="text-link" href="https://www.tiktok.com/@19nobodyknows22" target="_blank" rel="noopener noreferrer">OPEN TIKTOK →</a>
+
+        <p>
+          Follow <b>@19nobodyknows22</b> for video updates and live streams.
+        </p>
+
+        <a
+          class="text-link"
+          href="https://www.tiktok.com/@19nobodyknows22"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          OPEN TIKTOK →
+        </a>
       </div>
     </section>
 
@@ -205,61 +449,162 @@ const user = await getCurrentUser(Astro);
       </header>
 
       <div class="pricing-grid">
-        <article><span>CRYPTO BASIC</span><strong>$50</strong><small>/month</small></article>
-        <article><span>CRYPTO PRO</span><strong>$150</strong><small>/month</small></article>
-        <article><span>EXTRA PAIR</span><strong>$50</strong><small>each</small></article>
-        <article class="featured"><span>SOLO MACHINE</span><strong>$300</strong><small>one time</small></article>
-        <article><span>SOLO SERVICE</span><strong>$150–$300</strong><small>/month</small></article>
-        <article><span>ADVERTISING UPGRADE</span><strong>$399</strong><small>/month</small></article>
+        <article>
+          <span>CRYPTO BASIC</span>
+          <strong>$50</strong>
+          <small>/month</small>
+        </article>
+
+        <article>
+          <span>CRYPTO PRO</span>
+          <strong>$150</strong>
+          <small>/month</small>
+        </article>
+
+        <article>
+          <span>EXTRA PAIR</span>
+          <strong>$50</strong>
+          <small>each</small>
+        </article>
+
+        <article class="featured">
+          <span>SOLO MACHINE</span>
+          <strong>$300</strong>
+          <small>one time</small>
+        </article>
+
+        <article>
+          <span>SOLO SERVICE</span>
+          <strong>$150–$300</strong>
+          <small>/month</small>
+        </article>
+
+        <article>
+          <span>ADVERTISING UPGRADE</span>
+          <strong>$399</strong>
+          <small>/month</small>
+        </article>
       </div>
     </section>
 
     <section id="faq" class="faq-section">
       <div class="faq-col">
         <p class="kicker">FREQUENTLY ASKED QUESTIONS</p>
-        <details><summary>How does Google Login work?</summary><p>Google authenticates the account, then BoyKingTut.com creates or updates the user in Cloudflare D1 and creates a secure server-side session.</p></details>
-        <details><summary>How will Solana payment work?</summary><p>The checkout gets a live SOL/USD rate, locks the quote for five minutes, and verifies the finalized blockchain transaction.</p></details>
-        <details><summary>Does it cost to become an affiliate?</summary><p>No signup fee and no monthly affiliate platform fee are planned.</p></details>
-        <details><summary>Is advertising performance guaranteed?</summary><p>No. Results vary by business, market and campaign conditions.</p></details>
-        <details><summary>Is BoyKingTut.com financial advice?</summary><p>No. Crypto and leverage content is informational/entertainment only and involves substantial risk.</p></details>
+
+        <details>
+          <summary>How does Google Login work?</summary>
+          <p>
+            Google authenticates the account, then BoyKingTut.com creates
+            or updates the user in Cloudflare D1 and creates a secure
+            server-side session.
+          </p>
+        </details>
+
+        <details>
+          <summary>How will Solana payment work?</summary>
+          <p>
+            The checkout gets a live SOL/USD rate, locks the quote for
+            five minutes, and verifies the finalized blockchain transaction.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does it cost to become an affiliate?</summary>
+          <p>
+            No signup fee and no monthly affiliate platform fee are planned.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is advertising performance guaranteed?</summary>
+          <p>
+            No. Results vary by business, market and campaign conditions.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is BoyKingTut.com financial advice?</summary>
+          <p>
+            No. Crypto and leverage content is informational/entertainment
+            only and involves substantial risk.
+          </p>
+        </details>
       </div>
 
       <aside id="egyptNotice" class="travel-notice">
         <p class="kicker">EGYPT TRAVEL NOTICE</p>
         <h3>Information only — not a travel agency</h3>
-        <p>Travelers arrange their own flights. Tours, hotels, transportation, guides and other services are handled by independent third-party providers or local travel agents. Prices and availability may change.</p>
+
+        <p>
+          Travelers arrange their own flights. Tours, hotels,
+          transportation, guides and other services are handled by
+          independent third-party providers or local travel agents.
+          Prices and availability may change.
+        </p>
       </aside>
     </section>
 
     <section class="account-cta">
       <div>
         <p class="kicker">ACCOUNT SYSTEM</p>
-        <h2>{user ? `Welcome back, ${user.name || user.email}` : "Google Login + Cloudflare D1"}</h2>
+
+        <h2>
+          {
+            user
+              ? `Welcome back, ${user.name || user.email}`
+              : "Google Login + Cloudflare D1"
+          }
+        </h2>
+
         <p>
-          {user
-            ? `Your ${user.role} account is active.`
-            : "Sign in with Google. New customer and affiliate accounts can be stored in Cloudflare D1 and private Discord signup notifications can be sent server-side."}
+          {
+            user
+              ? `Your ${user.role} account is active.`
+              : "Sign in with Google. New customer and affiliate accounts can be stored in Cloudflare D1 and private Discord signup notifications can be sent server-side."
+          }
         </p>
       </div>
-      {user
-        ? <a class="btn btn-gold" href="/dashboard">OPEN DASHBOARD</a>
-        : <div class="actions">
-            <a class="btn btn-gold" href="/auth/google?role=customer">CONTINUE WITH GOOGLE</a>
-            <a class="btn btn-outline" href="/auth/google?role=affiliate">JOIN AS AFFILIATE</a>
-          </div>}
+
+      {
+        user
+          ? <a class="btn btn-gold" href="/dashboard">OPEN DASHBOARD</a>
+          : (
+            <div class="actions">
+              <a class="btn btn-gold" href="/auth/google?role=customer">
+                CONTINUE WITH GOOGLE
+              </a>
+
+              <a class="btn btn-outline" href="/auth/google?role=affiliate">
+                JOIN AS AFFILIATE
+              </a>
+            </div>
+          )
+      }
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer-brand"><span>𓂀</span><b>BoyKingTut.com</b></div>
-    <p>Quantum Financial Domination · Knowledge is Power · Build Your Reality.</p>
+    <div class="footer-brand">
+      <span>𓂀</span>
+      <b>BoyKingTut.com</b>
+    </div>
+
+    <p>
+      Quantum Financial Domination · Knowledge is Power · Build Your Reality.
+    </p>
+
     <nav>
       <a href="/#faq">FAQ</a>
       <a href="/#crypto">Risk Notice</a>
       <a href="/#affiliate">Affiliate Terms</a>
       <a href="/#egyptNotice">Travel Notice</a>
-      <a href="https://discord.gg/HA73BUfJ67" target="_blank">Discord</a>
+      <a href="https://discord.gg/HA73BUfJ67" target="_blank">
+        Discord
+      </a>
     </nav>
-    <small>© 2026 BoyKingTut.com · 18+ only · Not financial advice.</small>
+
+    <small>
+      © 2026 BoyKingTut.com · 18+ only · Not financial advice.
+    </small>
   </footer>
 </BaseLayout>
