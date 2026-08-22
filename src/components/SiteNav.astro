@@ -1,0 +1,44 @@
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="BoyKingTut.com home">
+    <span class="brand-mark">𓂀</span>
+    <span>
+      <strong>BoyKingTut.com</strong>
+      <small>Financial Domination Quantum</small>
+    </span>
+  </a>
+
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">
+    ☰ <span class="sr-only">Open menu</span>
+  </button>
+
+  <nav id="site-menu" class="site-menu" aria-label="Main navigation">
+    <a href="#crypto">Crypto</a>
+    <a href="#advertising">Advertising</a>
+    <a href="#affiliate">Affiliates / Make Money</a>
+    <a href="#reddit">Reddit Articles</a>
+    <a href="#tiktok">TikTok</a>
+    <a href="#metaverse">Metaverse</a>
+    <a href="#egypt">Egypt</a>
+    <a href="#faq">FAQ</a>
+    <a href="#pricing">Pricing</a>
+    <a class="nav-account" href="#account">Account</a>
+  </nav>
+</header>
+
+<script is:inline>
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector("#site-menu");
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      menu.classList.toggle("open", !open);
+    });
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        toggle.setAttribute("aria-expanded", "false");
+        menu.classList.remove("open");
+      });
+    });
+  }
+</script>

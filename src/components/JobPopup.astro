@@ -1,0 +1,42 @@
+<div id="job-popup" class="job-popup" hidden>
+  <button id="job-close" class="job-close" type="button" aria-label="Close affiliate opportunity">×</button>
+  <p class="eyebrow">AFFILIATES / MAKE MONEY</p>
+  <h2>ARE YOU LOOKING FOR A WAY TO EARN?</h2>
+  <p class="job-big">Work for yourself.</p>
+  <p>Help independent local businesses grow their visibility. Bring qualifying clients to BoyKingTut.com and monitor them from your dashboard.</p>
+
+  <div class="job-grid">
+    <strong>$0 signup fee</strong>
+    <strong>$0 monthly affiliate fee</strong>
+    <strong>$50–$100 qualifying recurring commissions</strong>
+    <strong>Paid in SOL</strong>
+  </div>
+
+  <p class="fine">Independent affiliate opportunity — not employment. No income is guaranteed. Tax obligations are the affiliate's responsibility.</p>
+
+  <div class="gate-actions">
+    <a class="btn btn-primary" href="#affiliate">HOW DO I BEGIN?</a>
+    <button id="job-later" class="btn btn-ghost" type="button">MAYBE LATER</button>
+  </div>
+</div>
+
+<script is:inline>
+  const popup = document.getElementById("job-popup");
+  const close = document.getElementById("job-close");
+  const later = document.getElementById("job-later");
+  const STORAGE_KEY = "bkt_job_popup_closed";
+
+  if (popup && close && later) {
+    const show = () => {
+      if (!sessionStorage.getItem(STORAGE_KEY)) popup.hidden = false;
+    };
+    const hide = () => {
+      popup.hidden = true;
+      sessionStorage.setItem(STORAGE_KEY, "1");
+    };
+
+    close.addEventListener("click", hide);
+    later.addEventListener("click", hide);
+    setTimeout(show, 9000);
+  }
+</script>
