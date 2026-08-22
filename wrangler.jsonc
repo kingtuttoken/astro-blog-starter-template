@@ -1,13 +1,15 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "astro-blog-starter-template",
-  "main": "dist/_worker.js/index.js",
+  "main": "@astrojs/cloudflare/entrypoints/server",
   "compatibility_date": "2026-08-20",
   "compatibility_flags": ["nodejs_compat"],
+
   "assets": {
     "binding": "ASSETS",
     "directory": "./dist"
   },
+
   "d1_databases": [
     {
       "binding": "DB",
@@ -16,6 +18,7 @@
       "migrations_dir": "migrations"
     }
   ],
+
   "vars": {
     "PUBLIC_SITE_URL": "https://boykingtut.com",
     "DISCORD_INVITE_URL": "https://discord.gg/HA73BUfJ67",
