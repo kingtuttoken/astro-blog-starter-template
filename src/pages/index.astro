@@ -1,21 +1,858 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Nav from "../components/Nav.astro";
-import AgeGate from "../components/AgeGate.astro";
-import { getCurrentUser } from "../lib/auth";
+import "../styles/global.css";
 
 export const prerender = false;
+---
 
-const user = await getCurrentUser(Astro);
----
-const env=getEnv(Astro.locals);
-const total:any=await env.DB.prepare("SELECT COUNT(*) count FROM users").first();
-const affiliates:any=await env.DB.prepare("SELECT COUNT(*) count FROM users WHERE role='affiliate'").first();
-const customers:any=await env.DB.prepare("SELECT COUNT(*) count FROM users WHERE role='customer'").first();
-const recent:any=await env.DB.prepare("SELECT id,email,name,role,created_at,last_login_at FROM users ORDER BY id DESC LIMIT 20").all();
----
-<BaseLayout title="Owner Admin — BoyKingTut.com">
-<Nav user={user}/><main class="dashboard-page"><section class="dash-hero"><div><p class="eyebrow">OWNER / ADMIN</p><h1>System Control</h1><p>Google-authenticated owner access.</p></div><a class="btn outline" href="/dashboard">Back to Dashboard</a></section>
-<section class="dash-grid"><article><small>TOTAL USERS</small><h2>{total?.count||0}</h2></article><article><small>CUSTOMERS</small><h2>{customers?.count||0}</h2></article><article><small>AFFILIATES</small><h2>{affiliates?.count||0}</h2></article><article><small>SYSTEM</small><h2>ONLINE</h2></article></section>
-<section class="dash-panel"><p class="eyebrow">RECENT ACCOUNTS</p><div class="table-wrap"><table><thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th><th>Created</th></tr></thead><tbody>{recent.results.map((r:any)=><tr><td>{r.id}</td><td>{r.name||'—'}</td><td>{r.email}</td><td>{r.role}</td><td>{r.created_at}</td></tr>)}</tbody></table></div></section></main>
-</BaseLayout>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
+  <meta
+    name="description"
+    content="Boy King Tut Eternal Spark — crypto systems, affiliates, local advertising, Second Life metaverse, Egypt information, Reddit articles and TikTok."
+  />
+  <meta name="theme-color" content="#03080e" />
+  <title>BoyKingTut.com — Eternal Spark</title>
+</head>
+
+<body>
+
+  <!-- 18+ ENTRANCE -->
+  <div id="ageGate" class="gate">
+    <section class="gate-card">
+      <p class="card-kicker">ACCESS & RISK NOTICE</p>
+      <h2>18+ ONLY</h2>
+
+      <div class="gate-copy">
+        <p>
+          BoyKingTut.com is intended for adults age 18 and older.
+        </p>
+
+        <p>
+          Cryptocurrency and leveraged trading involve substantial financial
+          risk and may result in partial or total loss.
+        </p>
+
+        <p>
+          Nothing on this website is financial, investment, tax or legal advice.
+        </p>
+
+        <p>
+          Protect your cryptocurrency. Never share your private key,
+          recovery phrase or seed phrase.
+        </p>
+      </div>
+
+      <label class="check">
+        <input id="ageCheck" type="checkbox" />
+        <span>
+          I confirm that I am 18+ and understand the risk notice.
+        </span>
+      </label>
+
+      <div class="actions">
+        <button id="enterButton" class="gold-cta" disabled>
+          AGREE & ENTER
+        </button>
+
+        <button id="leaveButton" class="dark-cta">
+          DISAGREE & LEAVE
+        </button>
+      </div>
+    </section>
+  </div>
+
+
+  <!-- NAVIGATION -->
+  <header class="topbar">
+
+    <a class="brand" href="/">
+      <span class="brand-icon">𓂀</span>
+
+      <span class="brand-copy">
+        <b>BOY KING TUT</b>
+        <small>ETERNAL SPARK</small>
+      </span>
+    </a>
+
+    <button
+      id="menuBtn"
+      class="menu-btn"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+
+    <nav id="mainNav" class="main-nav">
+      <a href="#crypto">Crypto</a>
+      <a href="#advertising">Advertising</a>
+      <a href="#affiliate">Affiliates</a>
+      <a href="#metaverse">Metaverse</a>
+      <a href="#egypt">Egypt</a>
+      <a href="#reddit">Reddit</a>
+      <a href="#tiktok">TikTok</a>
+      <a href="#faq">FAQ</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+
+    <div class="top-actions">
+      <a
+        class="dark-cta"
+        href="https://discord.gg/HA73BUfJ67"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        JOIN DISCORD
+      </a>
+
+      <a
+        class="account-button"
+        href="/auth/google?role=customer"
+      >
+        ACCOUNT
+      </a>
+    </div>
+
+  </header>
+
+
+  <main class="home-shell">
+
+    <!-- CINEMATIC HERO -->
+    <section class="cinematic-hero">
+
+      <img
+        class="cinematic-hero-image"
+        src="/images/hero-eternal-spark.jpg"
+        alt="Boy King Tut Eternal Spark"
+      />
+
+      <div class="cinematic-overlay"></div>
+
+      <div class="hero-branding">
+
+        <div class="wing-mark">𓂀</div>
+
+        <p class="hero-eyebrow">
+          BOY KING TUT
+        </p>
+
+        <h1>
+          ETERNAL SPARK
+        </h1>
+
+        <p class="hero-quote">
+          Knowledge • Freedom • Financial Power
+        </p>
+
+        <p class="hero-subline">
+          Build Your Reality.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            class="gold-cta"
+            href="#services"
+          >
+            EXPLORE SERVICES
+          </a>
+
+          <a
+            class="discord-cta"
+            href="https://discord.gg/HA73BUfJ67"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JOIN DISCORD
+            <small>discord.gg/HA73BUfJ67</small>
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="hero-right-quote">
+        <strong>“BE YOU.”</strong>
+        <strong>BE ACTIVE.</strong>
+        <strong>WORK SMART</strong>
+        <strong>NOT HARD.</strong>
+      </div>
+
+    </section>
+
+
+    <!-- QUICK SYSTEM BAR -->
+    <section class="quick-strip">
+
+      <a href="#crypto">
+        <span>↗</span>
+        <b>CRYPTO LEVERAGE ALARMS</b>
+        <small>Solo Machine</small>
+      </a>
+
+      <a href="#affiliate">
+        <span>♛</span>
+        <b>AFFILIATE / MAKE MONEY</b>
+        <small>Earn With Our System</small>
+      </a>
+
+      <a href="#advertising">
+        <span>⌂</span>
+        <b>LOCAL ADVERTISING</b>
+        <small>Promote & Get Seen</small>
+      </a>
+
+      <a href="#metaverse">
+        <span>◉</span>
+        <b>SECOND LIFE METAVERSE</b>
+        <small>Wild Hollow Experience</small>
+      </a>
+
+      <a href="#egypt">
+        <span>△</span>
+        <b>EGYPT & ANCIENT KNOWLEDGE</b>
+        <small>History & Travel</small>
+      </a>
+
+      <a href="#reddit">
+        <span>▤</span>
+        <b>EDUCATIONAL HUB</b>
+        <small>Articles & Memoirs</small>
+      </a>
+
+    </section>
+
+
+    <!-- MAIN SERVICE CARDS -->
+    <section id="services" class="big-card-grid">
+
+      <!-- CRYPTO -->
+      <article id="crypto" class="big-card">
+
+        <img
+          src="/images/card-crypto.jpg"
+          alt="Crypto Services"
+        />
+
+        <div class="big-card-body">
+
+          <p class="card-kicker">
+            🚀 CRYPTO SERVICES
+          </p>
+
+          <h2>
+            Live Signals · Tools · Community
+          </h2>
+
+          <ul>
+            <li>Experienced leverage trader alerts</li>
+            <li>Discord Automation</li>
+            <li>Tools & Member Access</li>
+          </ul>
+
+          <a href="#solo">
+            EXPLORE CRYPTO
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- AFFILIATE -->
+      <article id="affiliate" class="big-card">
+
+        <img
+          src="/images/card-affiliate.jpg"
+          alt="Affiliate Make Money"
+        />
+
+        <div class="big-card-body">
+
+          <p class="card-kicker">
+            🚀 AFFILIATE / MAKE MONEY
+          </p>
+
+          <h2>
+            Local Business Opportunity
+          </h2>
+
+          <ul>
+            <li>$0 Signup Fee</li>
+            <li>$0 Monthly Affiliate Fee</li>
+            <li>Qualifying Recurring Commissions</li>
+          </ul>
+
+          <a href="/auth/google?role=affiliate">
+            JOIN AFFILIATE
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- METAVERSE -->
+      <article
+        id="metaverse"
+        class="big-card cyan-card"
+      >
+
+        <img
+          src="/images/card-metaverse.jpg"
+          alt="Second Life Metaverse"
+        />
+
+        <div class="big-card-body">
+
+          <p class="card-kicker cyan">
+            🚀 METAVERSE
+          </p>
+
+          <h2>
+            Second Life — Wild Hollow
+          </h2>
+
+          <ul>
+            <li>Explore</li>
+            <li>Community</li>
+            <li>Desktop + Mobile Access</li>
+          </ul>
+
+          <a
+            href="https://maps.secondlife.com/secondlife/Wild%20Hollow/91/153/2451"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ENTER METAVERSE
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- EGYPT -->
+      <article id="egypt" class="big-card">
+
+        <img
+          src="/images/card-egypt.jpg"
+          alt="Egypt Travel"
+        />
+
+        <div class="big-card-body">
+
+          <p class="card-kicker">
+            ✦ EGYPT & TRAVEL
+          </p>
+
+          <h2>
+            Walk the Ancient Path
+          </h2>
+
+          <ul>
+            <li>Grand Egyptian Museum</li>
+            <li>Giza & Abydos</li>
+            <li>Luxor, Saqqara & More</li>
+          </ul>
+
+          <a href="#travel">
+            EXPLORE EGYPT
+          </a>
+
+        </div>
+
+      </article>
+
+
+      <!-- KNOWLEDGE -->
+      <article id="reddit" class="big-card">
+
+        <img
+          src="/images/card-knowledge.jpg"
+          alt="Knowledge Hub"
+        />
+
+        <div class="big-card-body">
+
+          <p class="card-kicker">
+            ▤ KNOWLEDGE HUB
+          </p>
+
+          <h2>
+            Articles · Reddit · TikTok
+          </h2>
+
+          <ul>
+            <li>400+ Articles / Memoirs</li>
+            <li>Independent Writing</li>
+            <li>Updates When Available</li>
+          </ul>
+
+          <a href="#knowledge">
+            READ & WATCH
+          </a>
+
+        </div>
+
+      </article>
+
+    </section>
+
+
+    <!-- DISCORD -->
+    <section id="discord" class="community-banner">
+
+      <div class="community-left">
+
+        <div class="discord-orb">
+          ◉
+        </div>
+
+        <div>
+
+          <h2>
+            JOIN THE BOY KING TUT COMMUNITY
+          </h2>
+
+          <p>
+            Community · Crypto · Affiliates · Updates
+          </p>
+
+          <a
+            href="https://discord.gg/HA73BUfJ67"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Discord.gg/HA73BUfJ67
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="community-actions">
+
+        <span>◉ Live Updates</span>
+        <span>↗ Trading Alerts</span>
+        <span>♙ Member Support</span>
+        <span>♛ Community Events</span>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHY -->
+    <section class="why-strip">
+
+      <h2>
+        WHY CHOOSE BOY KING TUT
+      </h2>
+
+      <div>
+
+        <article>
+          <b>$</b>
+          <span>
+            SECURE PAYMENTS
+            <small>Solana Blockchain</small>
+          </span>
+        </article>
+
+        <article>
+          <b>◷</b>
+          <span>
+            ACCESS
+            <small>After Verification</small>
+          </span>
+        </article>
+
+        <article>
+          <b>☵</b>
+          <span>
+            COMMUNITY
+            <small>Discord</small>
+          </span>
+        </article>
+
+        <article>
+          <b>✪</b>
+          <span>
+            DASHBOARDS
+            <small>Monitor Activity</small>
+          </span>
+        </article>
+
+        <article>
+          <b>▯</b>
+          <span>
+            MOBILE FRIENDLY
+            <small>Access Anywhere</small>
+          </span>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- SOLO MACHINE -->
+    <section id="solo" class="hidden-detail-section">
+
+      <h2>
+        Solo Leverage Alarm Machine
+      </h2>
+
+      <div class="detail-grid">
+
+        <div>
+          <strong>$300</strong>
+          <small>Machine</small>
+        </div>
+
+        <div>
+          <strong>BTC</strong>
+          <small>Included Pair</small>
+        </div>
+
+        <div>
+          <strong>+$50</strong>
+          <small>Each Extra Pair</small>
+        </div>
+
+        <div>
+          <strong>$150–$300</strong>
+          <small>Monthly Service</small>
+        </div>
+
+      </div>
+
+      <p>
+        Requires a leverage-capable exchange account and reliable
+        always-on internet. Cable, fiber, Starlink or reliable
+        5G connectivity is recommended.
+      </p>
+
+      <p>
+        Leveraged cryptocurrency trading is extremely high risk and
+        may result in partial or total financial loss.
+      </p>
+
+    </section>
+
+
+    <!-- LOCAL ADVERTISING -->
+    <section
+      id="advertising"
+      class="hidden-detail-section"
+    >
+
+      <h2>
+        Local Advertising
+      </h2>
+
+      <p>
+        Designed for independent local businesses including restaurants,
+        pizza shops, cafés, barbers, salons, stores and privately owned services.
+      </p>
+
+      <div class="detail-grid">
+
+        <div>
+          <strong>15 mi</strong>
+          <small>Standard Local Target</small>
+        </div>
+
+        <div>
+          <strong>50 mi</strong>
+          <small>Upgraded Target Area</small>
+        </div>
+
+        <div>
+          <strong>$399</strong>
+          <small>Upgraded Monthly Package</small>
+        </div>
+
+        <div>
+          <strong>Brochure</strong>
+          <small>Design Included Where Applicable</small>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- KNOWLEDGE -->
+    <section
+      id="knowledge"
+      class="hidden-detail-section"
+    >
+
+      <h2>
+        Reddit Articles + 400+ Memoirs
+      </h2>
+
+      <p>
+        Featured writings, memoirs, observations and updates,
+        refreshed as material becomes available.
+      </p>
+
+    </section>
+
+
+    <!-- TIKTOK -->
+    <section
+      id="tiktok"
+      class="hidden-detail-section"
+    >
+
+      <h2>
+        TikTok Updates & Live Streams
+      </h2>
+
+      <p>
+        Follow <b>@19nobodyknows22</b>.
+      </p>
+
+      <a
+        class="gold-inline"
+        href="https://www.tiktok.com/@19nobodyknows22"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        OPEN TIKTOK →
+      </a>
+
+    </section>
+
+
+    <!-- TRAVEL -->
+    <section
+      id="travel"
+      class="hidden-detail-section"
+    >
+
+      <h2>
+        Egypt Information & Education
+      </h2>
+
+      <p>
+        BoyKingTut.com is not a travel agency, airline, tour operator,
+        hotel provider or transportation company.
+      </p>
+
+      <p>
+        Travelers arrange their own flights. Hotels, tours,
+        transportation, guides and other travel services must be
+        arranged with independent third-party providers or local travel agents.
+      </p>
+
+      <p>
+        Prices, availability and entry requirements may change.
+      </p>
+
+    </section>
+
+
+    <!-- ACCOUNT -->
+    <section class="account-panel">
+
+      <div>
+
+        <p class="section-label">
+          ACCOUNT
+        </p>
+
+        <h2>
+          Google Account Login
+        </h2>
+
+        <p>
+          Continue with Google to access customer or affiliate services.
+        </p>
+
+      </div>
+
+      <div class="account-buttons">
+
+        <a
+          class="gold-cta"
+          href="/auth/google?role=customer"
+        >
+          CONTINUE WITH GOOGLE
+        </a>
+
+        <a
+          class="dark-cta"
+          href="/auth/google?role=affiliate"
+        >
+          JOIN AS AFFILIATE
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- FAQ -->
+    <section id="faq" class="hidden-detail-section">
+
+      <h2>
+        Frequently Asked Questions
+      </h2>
+
+      <details>
+        <summary>Is BoyKingTut.com financial advice?</summary>
+        <p>
+          No. Crypto and leveraged trading content is informational
+          and involves substantial financial risk.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does it cost to become an affiliate?</summary>
+        <p>
+          No signup fee and no monthly affiliate platform fee are planned.
+        </p>
+      </details>
+
+      <details>
+        <summary>How will Solana payments work?</summary>
+        <p>
+          Checkout will calculate the required SOL amount using a live
+          SOL/USD quote and verify qualifying payments on-chain.
+        </p>
+      </details>
+
+    </section>
+
+
+    <!-- PRICING -->
+    <section
+      id="pricing"
+      class="hidden-detail-section"
+    >
+
+      <h2>
+        Pricing
+      </h2>
+
+      <div class="detail-grid">
+
+        <div>
+          <strong>$50</strong>
+          <small>Crypto Basic / Month</small>
+        </div>
+
+        <div>
+          <strong>$150</strong>
+          <small>Crypto Pro / Month</small>
+        </div>
+
+        <div>
+          <strong>+$50</strong>
+          <small>Additional Pair</small>
+        </div>
+
+        <div>
+          <strong>$300</strong>
+          <small>Solo Machine</small>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="cinematic-footer">
+
+    <div class="footer-logo">
+
+      <span>𓂀</span>
+
+      <b>
+        BOY KING TUT
+      </b>
+
+      <small>
+        ETERNAL SPARK
+      </small>
+
+    </div>
+
+    <p>
+      “Knowledge is Power. Freedom is Wealth. Build Your Reality.”
+    </p>
+
+    <small>
+      © 2026 BoyKingTut.com · 18+ Only · Not Financial Advice
+    </small>
+
+  </footer>
+
+
+  <script is:inline>
+    const gate = document.getElementById("ageGate");
+    const check = document.getElementById("ageCheck");
+    const enter = document.getElementById("enterButton");
+    const leave = document.getElementById("leaveButton");
+
+    const key = "bkt_18_accept";
+
+    if (sessionStorage.getItem(key) === "yes") {
+      gate.hidden = true;
+    } else {
+      document.body.classList.add("locked");
+    }
+
+    check?.addEventListener("change", () => {
+      enter.disabled = !check.checked;
+    });
+
+    enter?.addEventListener("click", () => {
+      if (!check.checked) return;
+
+      sessionStorage.setItem(key, "yes");
+
+      gate.hidden = true;
+
+      document.body.classList.remove("locked");
+    });
+
+    leave?.addEventListener("click", () => {
+      window.location.href = "https://www.google.com/";
+    });
+
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mainNav = document.getElementById("mainNav");
+
+    menuBtn?.addEventListener("click", () => {
+      const open =
+        menuBtn.getAttribute("aria-expanded") === "true";
+
+      menuBtn.setAttribute(
+        "aria-expanded",
+        String(!open)
+      );
+
+      mainNav?.classList.toggle(
+        "open",
+        !open
+      );
+    });
+  </script>
+
+</body>
+</html>
