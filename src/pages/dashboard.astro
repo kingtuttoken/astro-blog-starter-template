@@ -1,0 +1,26 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import { getCurrentUser } from "../lib/auth";
+export const prerender = false;
+const user = await getCurrentUser(Astro);
+if (!user) return Astro.redirect("/auth/google?role=customer");
+---
+<BaseLayout title="Dashboard — BoyKingTut.com">
+  <Nav user={user} />
+  <main class="dashboard-page">
+    <section class="dash-hero">
+      <div class="avatar">{user.avatar_url ? <img src={user.avatar_url} alt="Google profile" /> : "𓂀"}</div>
+      <div><p class="eyebrow">ACCOUNT DASHBOARD</p><h1>Welcome, {user.name || user.email}</h1><p>Role: <strong>{user.role}</strong>{user.affiliate_code ? <> · Affiliate code: <strong>{user.affiliate_code}</strong></> : null}</p></div>
+      <a class="btn outline" href="/auth/logout">Log out</a>
+    </section>
+    <section class="dash-grid">
+      <article><small>ACCOUNT</small><h2>Google Connected</h2><p>{user.email}</p></article>
+      <article><small>DISCORD</small><h2>Community Access</h2><p><a href="https://discord.gg/HA73BUfJ67" target="_blank">Join Discord →</a></p></article>
+      <article><small>SOLANA</small><h2>Payments</h2><p>Checkout and blockchain verification are ready for the payment phase.</p></article>
+      <article><small>ROLE</small><h2>{user.role.toUpperCase()}</h2><p>Your dashboard modules expand based on account activity.</p></article>
+    </section>
+    {user.role === 'affiliate' && <section class="dash-panel"><p class="eyebrow">AFFILIATE / MAKE MONEY</p><h2>Your affiliate system is active</h2><p>Use your code <strong>{user.affiliate_code}</strong> when bringing independent local businesses into the platform. Client monitoring, notes and SOL commission tools can plug into this account.</p></section>}
+    {["owner","admin"].includes(user.role) && <section class="dash-panel"><p class="eyebrow">OWNER ACCESS</p><h2>Admin area unlocked</h2><a class="btn gold" href="/admin">Open Owner Admin</a></section>}
+  </main>
+</BaseLayout>
