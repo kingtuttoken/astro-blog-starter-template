@@ -8,16 +8,20 @@ interface Props {
 
 const {
   title = "BoyKingTut.com — Financial Domination Quantum",
-  description = "Crypto systems, local business advertising, affiliate opportunities, articles, TikTok updates and Egypt travel information.",
+  description = "Crypto systems, local advertising, affiliate opportunities, articles, TikTok, Second Life and Egypt travel information.",
 } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#07090c" />
+    <meta name="theme-color" content="#060709" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
     <title>{title}</title>
   </head>
   <body>
