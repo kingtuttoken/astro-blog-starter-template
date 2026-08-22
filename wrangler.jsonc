@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "astro-blog-starter-template",
+  "main": "dist/_worker.js/index.js",
+  "compatibility_date": "2026-08-20",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "boykingtut-db",
+      "database_id": "REPLACE_WITH_YOUR_D1_DATABASE_ID",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "PUBLIC_SITE_URL": "https://boykingtut.com",
+    "DISCORD_INVITE_URL": "https://discord.gg/HA73BUfJ67",
+    "SOLANA_RECEIVING_WALLET": "4j4Rz7WHPHLdWm36db7d3LWexd3XtdPC4BxBiQ3jYmxS"
+  }
+}

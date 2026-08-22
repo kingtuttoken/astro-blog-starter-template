@@ -1,0 +1,7 @@
+# Local development only. Copy to .dev.vars and fill in values. Never commit .dev.vars.
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+SESSION_SECRET=change-me-to-a-long-random-secret
+ADMIN_EMAILS=your-google-email@example.com
+DISCORD_SIGNUP_WEBHOOK=
+SOLANA_RPC_URL=
