@@ -1,17 +1,45 @@
 ---
 const { user = null } = Astro.props;
 ---
-<header class="nav-wrap">
-  <a class="logo" href="/"><span class="logo-mark">𓂀</span><span><b>BOY KING TUT</b><small>ETERNAL SPARK</small></span></a>
-  <button id="menuBtn" class="menu-btn" aria-controls="navMenu" aria-expanded="false">☰</button>
-  <nav id="navMenu" class="nav-menu">
-    <a href="/#crypto">Crypto</a><a href="/#advertising">Advertising</a><a href="/#affiliate">Affiliates</a><a href="/#metaverse">Metaverse</a><a href="/#egypt">Egypt</a><a href="/#reddit">Reddit</a><a href="/#tiktok">TikTok</a><a href="/#faq">FAQ</a>
+<header class="topbar">
+  <a class="brand" href="/">
+    <span class="brand-icon">𓂀</span>
+    <span class="brand-copy">
+      <b>BoyKingTut.com</b>
+      <small>QUANTUM FINANCIAL DOMINATION</small>
+    </span>
+  </a>
+
+  <button id="menuBtn" class="menu-btn" aria-controls="mainNav" aria-expanded="false" aria-label="Open menu">☰</button>
+
+  <nav id="mainNav" class="main-nav">
+    <a href="/#crypto">Crypto</a>
+    <a href="/#advertising">Advertising</a>
+    <a href="/#affiliate">Affiliates / Make Money</a>
+    <a href="/#reddit">Reddit Articles</a>
+    <a href="/#tiktok">TikTok</a>
+    <a href="/#discord">Discord</a>
+    <a href="/#metaverse">Metaverse</a>
+    <a href="/#egypt">Egypt</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/#pricing">Pricing</a>
   </nav>
-  <div class="nav-actions">
-    <a class="discord-btn" href="https://discord.gg/HA73BUfJ67" target="_blank" rel="noopener">Discord</a>
-    {user ? <a class="account-btn" href="/dashboard">Dashboard</a> : <a class="account-btn" href="/auth/google?role=customer">Google Login</a>}
+
+  <div class="top-actions">
+    {user
+      ? <a class="account-button" href="/dashboard">Dashboard</a>
+      : <a class="account-button" href="/auth/google?role=customer">Account</a>}
   </div>
 </header>
+
 <script is:inline>
-  const b=document.getElementById('menuBtn'),n=document.getElementById('navMenu');if(b&&n)b.addEventListener('click',()=>{const o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!o));n.classList.toggle('open',!o)});
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("mainNav");
+  if (btn && nav) {
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("open", !open);
+    });
+  }
 </script>
