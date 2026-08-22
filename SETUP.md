@@ -107,3 +107,23 @@ New customers are saved to D1 and can also trigger the Discord webhook.
 The site already displays your public receiving address configuration and the product/pricing structure, but **live CoinGecko quoting and finalized on-chain payment verification are not activated in this package yet**. They should be wired only after the login/database deploy is confirmed working, so a payment can be attached to a real user/order record.
 
 No seed phrase or private wallet key should ever be put in this project.
+
+
+## QUANTUM FINANCIAL DOMINATION FRONTEND
+
+The homepage has been rebuilt to match the approved black/gold Quantum Financial Domination layout.
+
+Generated assets included in `public/images/`:
+- `hero-quantum.jpg`
+- `crypto-system.jpg`
+- `local-advertising.jpg`
+- `affiliate-network.jpg`
+- `solo-machine.jpg`
+- `discord-community.jpg`
+- `metaverse-wild-hollow.jpg`
+- `egypt-information.jpg`
+- `quantum-financial-domination-reference.jpg`
+
+Google Login, Cloudflare D1, dashboard, owner/admin routes, Discord server-side helpers and the existing backend foundation are preserved from the full Cloudflare build.
+
+Important: configure secrets in Cloudflare, not in GitHub.
