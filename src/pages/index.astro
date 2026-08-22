@@ -1,9 +1,13 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Nav from "../../components/Nav.astro";
-import { getCurrentUser, getEnv } from "../../lib/auth";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import AgeGate from "../components/AgeGate.astro";
+import { getCurrentUser } from "../lib/auth";
+
 export const prerender = false;
-const user=await getCurrentUser(Astro); if(!user) return Astro.redirect('/auth/google?role=customer'); if(!['admin','owner'].includes(user.role)) return Astro.redirect('/dashboard');
+
+const user = await getCurrentUser(Astro);
+---
 const env=getEnv(Astro.locals);
 const total:any=await env.DB.prepare("SELECT COUNT(*) count FROM users").first();
 const affiliates:any=await env.DB.prepare("SELECT COUNT(*) count FROM users WHERE role='affiliate'").first();
