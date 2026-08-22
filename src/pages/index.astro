@@ -5,339 +5,468 @@ import AgeGate from "../components/AgeGate.astro";
 import JobPopup from "../components/JobPopup.astro";
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="BoyKingTut.com — Financial Domination Quantum"
+  description="Crypto systems, local advertising, affiliate opportunities, Reddit articles, TikTok updates, Second Life metaverse access and Egypt travel information."
+>
   <AgeGate />
   <JobPopup />
 
-  <div id="top" class="page-shell">
+  <div id="top" class="site">
     <SiteNav />
 
     <main>
-      <section class="hero">
-        <div class="hero-content">
-          <p class="eyebrow">BOYKINGTUT.COM</p>
-          <h1>Financial Domination <span>Quantum</span></h1>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-orbit hero-orbit-a" aria-hidden="true"></div>
+        <div class="hero-orbit hero-orbit-b" aria-hidden="true"></div>
+
+        <div class="hero-copy-wrap">
+          <p class="kicker">BOYKINGTUT.COM</p>
+          <h1 id="hero-title">
+            Financial Domination
+            <span>Quantum</span>
+          </h1>
           <p class="hero-copy">
-            One platform for crypto systems, local business advertising, independent affiliate opportunities,
-            articles, live updates, a public Second Life metaverse destination and educational Egypt travel information.
+            A premium gateway for crypto systems, local business advertising, independent affiliate opportunities,
+            Reddit articles, TikTok updates, Second Life metaverse access and educational Egypt travel information.
           </p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#services">EXPLORE SERVICES</a>
-            <a class="btn btn-ghost" href="#account">JOIN / LOGIN</a>
+            <a class="button button-gold" href="#services">Explore the System</a>
+            <a class="button button-dark" href="#account">Join / Login</a>
           </div>
-          <p class="risk-line">18+ • High-risk crypto content • Not financial advice</p>
+
+          <div class="trust-strip" aria-label="Key platform features">
+            <span>18+ only</span>
+            <span>Solana payments</span>
+            <span>Blockchain verification</span>
+            <span>Desktop + mobile</span>
+          </div>
         </div>
 
-        <aside class="hero-panel">
-          <div>
-            <small>BUILT-IN PAYMENTS</small>
-            <strong>Solana</strong>
-            <span>5-minute locked quote • on-chain verification</span>
+        <aside class="hero-console" aria-label="Platform overview">
+          <div class="console-head">
+            <span class="console-dot"></span>
+            <span>BOY KING TUT SYSTEM</span>
+            <strong>ONLINE</strong>
           </div>
-          <div>
-            <small>COMMUNITY</small>
-            <strong>Local First</strong>
-            <span>Independent businesses • affiliates • progress tracking</span>
+
+          <div class="console-grid">
+            <article>
+              <small>CRYPTO</small>
+              <strong>BTC INCLUDED</strong>
+              <span>Extra pairs +$50</span>
+            </article>
+            <article>
+              <small>ADVERTISING</small>
+              <strong>15–50 MILES</strong>
+              <span>Local business focus</span>
+            </article>
+            <article>
+              <small>AFFILIATES</small>
+              <strong>$0 TO JOIN</strong>
+              <span>Paid in SOL</span>
+            </article>
+            <article>
+              <small>METAVERSE</small>
+              <strong>PUBLIC ACCESS</strong>
+              <span>Second Life</span>
+            </article>
           </div>
-          <div>
-            <small>ACCESS</small>
-            <strong>Desktop + Mobile</strong>
-            <span>Responsive Astro experience on Cloudflare</span>
+
+          <div class="console-footer">
+            <span>Powered by Astro + Cloudflare</span>
+            <span class="pulse">LIVE SYSTEM</span>
           </div>
         </aside>
       </section>
 
-      <section id="services" class="section">
-        <div class="section-head">
-          <p class="eyebrow">EXPLORE</p>
-          <h2>Choose your path</h2>
-        </div>
+      <section id="services" class="section" aria-labelledby="services-title">
+        <header class="section-heading">
+          <p class="kicker">MAIN SYSTEM</p>
+          <h2 id="services-title">Everything in one place</h2>
+          <p>
+            Each area has its own customer experience while sharing one responsive account, payment and dashboard system.
+          </p>
+        </header>
 
-        <div class="cards cards-3">
-          <article id="crypto" class="card feature-card">
-            <span class="icon">₿</span>
-            <h3>Online Crypto System</h3>
-            <p>Discord alerts and the Solo Leverage Alarm system for experienced high-risk leverage traders.</p>
-            <ul>
-              <li>Basic: $50/month</li>
-              <li>Pro: $150/month</li>
-              <li>Extra crypto pair: +$50 each</li>
-            </ul>
-            <a href="#crypto-details">View Crypto</a>
+        <div class="service-grid">
+          <article id="crypto" class="service-card service-card-primary">
+            <div class="service-icon" aria-hidden="true">₿</div>
+            <div>
+              <p class="service-label">ONLINE CRYPTO SYSTEM</p>
+              <h3>Signals + Solo Leverage Alarm</h3>
+              <p>
+                Built for experienced leverage traders with Discord access, machine monitoring and Solana billing.
+              </p>
+            </div>
+            <div class="service-meta">
+              <span>Basic $50/mo</span>
+              <span>Pro $150/mo</span>
+              <span>BTC included</span>
+            </div>
+            <a class="card-link" href="#crypto-details">Explore Crypto <span>→</span></a>
           </article>
 
-          <article id="advertising" class="card feature-card">
-            <span class="icon">⌖</span>
-            <h3>Local Advertising</h3>
-            <p>Traffic-focused campaigns for independent local businesses with transparent progress monitoring.</p>
-            <ul>
-              <li>Local targeting up to 15 miles</li>
-              <li>Upgraded targeting up to 50 miles</li>
-              <li>$399 upgraded package + brochure design</li>
-            </ul>
-            <a href="#business-flow">View Advertising</a>
+          <article id="advertising" class="service-card">
+            <div class="service-icon" aria-hidden="true">⌖</div>
+            <div>
+              <p class="service-label">LOCAL ADVERTISING</p>
+              <h3>Bring traffic to local businesses</h3>
+              <p>
+                Focused on independent pizza shops, restaurants, barbers, salons, cafés, stores and owner-operated services.
+              </p>
+            </div>
+            <div class="service-meta">
+              <span>15-mile local</span>
+              <span>50-mile upgraded</span>
+              <span>Progress dashboard</span>
+            </div>
+            <a class="card-link" href="#business-flow">View Advertising <span>→</span></a>
           </article>
 
-          <article id="affiliate" class="card feature-card">
-            <span class="icon">♛</span>
-            <h3>Affiliates / Make Money</h3>
-            <p>Approach local independent businesses, share your affiliate brochure and earn qualifying recurring commissions.</p>
-            <ul>
-              <li>$0 signup fee</li>
-              <li>$0 monthly affiliate fee</li>
-              <li>$50–$100 qualifying recurring commission</li>
-            </ul>
-            <a href="#affiliate-flow">How to Begin</a>
+          <article id="affiliate" class="service-card">
+            <div class="service-icon" aria-hidden="true">♛</div>
+            <div>
+              <p class="service-label">AFFILIATES / MAKE MONEY</p>
+              <h3>Help your community grow</h3>
+              <p>
+                Bring qualifying local clients, use your personal affiliate code, print brochures and monitor activity.
+              </p>
+            </div>
+            <div class="service-meta">
+              <span>$0 signup</span>
+              <span>$0 monthly fee</span>
+              <span>$50–$100 recurring</span>
+            </div>
+            <a class="card-link" href="#affiliate-flow">How to Begin <span>→</span></a>
           </article>
         </div>
       </section>
 
-      <section id="crypto-details" class="section split">
-        <div>
-          <p class="eyebrow">CRYPTO</p>
-          <h2>Solo Leverage Alarm Machine</h2>
-          <p>
-            Hardware alert system intended for experienced leverage traders. A leverage-capable exchange account
-            and reliable always-on internet connection are required.
+      <section id="crypto-details" class="section feature-split" aria-labelledby="solo-title">
+        <div class="feature-copy">
+          <p class="kicker">CRYPTO / HARDWARE</p>
+          <h2 id="solo-title">Solo Leverage Alarm Machine</h2>
+          <p class="lead-copy">
+            A dedicated hardware alert system for experienced leverage traders. A leverage-capable exchange account and
+            reliable always-on internet connection are required.
           </p>
 
-          <div class="price-row">
+          <div class="stat-grid">
             <div><small>Machine</small><strong>$300</strong></div>
-            <div><small>Included pair</small><strong>BTC</strong></div>
-            <div><small>Extra pair</small><strong>+$50</strong></div>
+            <div><small>Included Pair</small><strong>BTC</strong></div>
+            <div><small>Extra Pair</small><strong>+$50</strong></div>
             <div><small>Maintenance</small><strong>$150–$300/mo</strong></div>
           </div>
 
-          <p class="notice">
-            Cable, fiber, Starlink, or reliable always-on 5G/Wi-Fi is recommended. Timing is critical; outages or
-            disconnections can result in missed alerts. No alert guarantees profit.
-          </p>
-        </div>
-
-        <div class="card terminal-card">
-          <div class="status-row"><span>Machine</span><strong class="ok">ACTIVE</strong></div>
-          <div class="status-row"><span>BTC Pair</span><strong>INCLUDED</strong></div>
-          <div class="status-row"><span>SOL Pair</span><strong>+ $50</strong></div>
-          <div class="status-row"><span>Discord</span><strong class="ok">CONNECTED</strong></div>
-          <div class="status-row"><span>Payment</span><strong>SOLANA</strong></div>
-          <button class="btn btn-primary full" type="button" disabled title="Checkout wiring comes in the payment phase">
-            PAY WITH SOLANA — COMING NEXT
-          </button>
-        </div>
-      </section>
-
-      <section id="business-flow" class="section">
-        <div class="section-head">
-          <p class="eyebrow">LOCAL BUSINESS</p>
-          <h2>Simple campaign setup</h2>
-          <p>Best suited to owner-operated local businesses rather than large national chains.</p>
-        </div>
-
-        <div class="steps">
-          <div><b>1</b><span>Ask the business for its menu, brochure, flyer, service list or current price sheet.</span></div>
-          <div><b>2</b><span>Upload the current image and confirm business details and offers.</span></div>
-          <div><b>3</b><span>U.S.: choose ZIP code + radius. International: choose city + country, with postal area where appropriate.</span></div>
-          <div><b>4</b><span>Choose the advertising package that fits the business.</span></div>
-          <div><b>5</b><span>Client pays with Solana. After on-chain verification, the campaign can activate.</span></div>
-          <div><b>6</b><span>Client and affiliate monitor progress, notes and renewal status from their dashboards.</span></div>
-        </div>
-
-        <p class="notice">Campaign performance should be evaluated over time. Results vary by business, location, offer, competition, season and customer demand. No specific customer-growth result is guaranteed.</p>
-      </section>
-
-      <section id="affiliate-flow" class="section split">
-        <div>
-          <p class="eyebrow">AFFILIATE / MARKETING SPECIALIST</p>
-          <h2>Help your community grow</h2>
-          <p>Focus on independent restaurants, pizza shops, cafés, barbers, salons, local shops and other privately owned businesses where the person you meet can make marketing decisions.</p>
-          <div class="steps compact">
-            <div><b>1</b><span>Create your account.</span></div>
-            <div><b>2</b><span>Receive your affiliate ID, referral link and printable brochure.</span></div>
-            <div><b>3</b><span>Visit suitable independent local businesses.</span></div>
-            <div><b>4</b><span>Client signs up under your code and selects a package.</span></div>
-            <div><b>5</b><span>Client pays the service fee with SOL. You do not pay a monthly affiliate fee.</span></div>
-            <div><b>6</b><span>Monitor qualifying clients and commissions in your dashboard.</span></div>
+          <div class="callout">
+            <strong>Timing is critical.</strong>
+            <p>
+              Use cable, fiber, Starlink or reliable always-on 5G/Wi-Fi. Outages or disconnects can cause missed alerts.
+              No alert guarantees profit.
+            </p>
           </div>
         </div>
 
-        <div class="card affiliate-card">
-          <span class="badge">START FOR $0</span>
-          <h3>No signup fee. No monthly affiliate fee.</h3>
-          <p>Qualifying commission becomes eligible when a referred client becomes an active paying subscriber under the program terms.</p>
-          <div class="metric-grid">
-            <div><small>Signup</small><strong>$0</strong></div>
-            <div><small>Monthly affiliate fee</small><strong>$0</strong></div>
+        <aside class="machine-panel" aria-label="Solo machine status preview">
+          <div class="machine-head">
+            <div>
+              <span class="status-light"></span>
+              <small>SOLO MACHINE</small>
+            </div>
+            <strong>READY</strong>
+          </div>
+          <div class="machine-screen">
+            <div>
+              <span>PAIR</span>
+              <strong>BTC / USD</strong>
+            </div>
+            <div>
+              <span>ALERT SERVICE</span>
+              <strong class="green">ACTIVE</strong>
+            </div>
+            <div>
+              <span>DISCORD</span>
+              <strong class="green">CONNECTED</strong>
+            </div>
+            <div>
+              <span>PAYMENT</span>
+              <strong>SOLANA</strong>
+            </div>
+          </div>
+          <button class="button button-gold button-full" type="button" disabled>
+            Pay With Solana — Backend Next
+          </button>
+        </aside>
+      </section>
+
+      <section id="business-flow" class="section" aria-labelledby="business-title">
+        <header class="section-heading">
+          <p class="kicker">LOCAL BUSINESS WORKFLOW</p>
+          <h2 id="business-title">From brochure to active campaign</h2>
+          <p>
+            The affiliate introduces the service. The system handles onboarding, payment verification, campaign records,
+            notes and progress monitoring.
+          </p>
+        </header>
+
+        <div class="timeline">
+          <article><span>01</span><h3>Request business material</h3><p>Menu, brochure, service list, flyer or current price sheet.</p></article>
+          <article><span>02</span><h3>Upload current image</h3><p>Confirm the business name, service details, pricing and contact information.</p></article>
+          <article><span>03</span><h3>Select target area</h3><p>U.S.: ZIP + radius. International: city + country, with postal area when useful.</p></article>
+          <article><span>04</span><h3>Choose a package</h3><p>Select the advertising option that fits the business and local market.</p></article>
+          <article><span>05</span><h3>Pay with Solana</h3><p>Live SOL/USD quote, 5-minute lock and on-chain verification.</p></article>
+          <article><span>06</span><h3>Monitor progress</h3><p>Client and affiliate dashboards show activity, notes and renewal status.</p></article>
+        </div>
+
+        <div class="legal-band">
+          Campaign performance varies by location, business, competition, season, offer and customer demand.
+          Specific customer-growth results are not guaranteed.
+        </div>
+      </section>
+
+      <section id="affiliate-flow" class="section feature-split" aria-labelledby="affiliate-title">
+        <div class="feature-copy">
+          <p class="kicker">AFFILIATES / MAKE MONEY</p>
+          <h2 id="affiliate-title">Start for $0</h2>
+          <p class="lead-copy">
+            No signup fee. No monthly affiliate platform fee. Focus on independent local businesses where the owner or
+            decision-maker can approve marketing.
+          </p>
+
+          <ol class="number-list">
+            <li><span>01</span><div><strong>Create your account</strong><p>Google Login will be connected in the backend phase.</p></div></li>
+            <li><span>02</span><div><strong>Receive your affiliate code</strong><p>Referral URL, printable brochure and dashboard access.</p></div></li>
+            <li><span>03</span><div><strong>Visit local businesses</strong><p>Pizza shops, restaurants, cafés, barbers, salons and independent shops.</p></div></li>
+            <li><span>04</span><div><strong>Client signs up under you</strong><p>Help the business choose the package that fits its needs.</p></div></li>
+            <li><span>05</span><div><strong>Client pays with SOL</strong><p>The client pays its own service subscription.</p></div></li>
+            <li><span>06</span><div><strong>Monitor and earn</strong><p>Qualifying recurring commissions are tracked in the affiliate dashboard.</p></div></li>
+          </ol>
+        </div>
+
+        <aside class="affiliate-highlight">
+          <p class="kicker">AFFILIATE ACCOUNT</p>
+          <h3>Your local business command center</h3>
+
+          <div class="affiliate-kpis">
+            <div><small>Signup Fee</small><strong>$0</strong></div>
+            <div><small>Monthly Fee</small><strong>$0</strong></div>
             <div><small>Commission</small><strong>$50–$100</strong></div>
             <div><small>Payout</small><strong>SOL</strong></div>
           </div>
-          <a class="btn btn-primary full" href="#account">JOIN AS AFFILIATE</a>
-        </div>
+
+          <ul class="check-list">
+            <li>Personal affiliate code</li>
+            <li>Printable brochure</li>
+            <li>Client monitoring</li>
+            <li>Notes + progress</li>
+            <li>Commission history</li>
+            <li>Solana payout records</li>
+          </ul>
+
+          <a class="button button-gold button-full" href="#account">Join as Affiliate</a>
+        </aside>
       </section>
 
-      <section class="section">
-        <div class="section-head">
-          <p class="eyebrow">SOLANA</p>
-          <h2>How payment works</h2>
-        </div>
-
-        <div class="steps">
-          <div><b>1</b><span>Choose a product, service or subscription.</span></div>
-          <div><b>2</b><span>The server requests the live SOL/USD rate from CoinGecko.</span></div>
-          <div><b>3</b><span>The exact SOL amount is locked for 5 minutes.</span></div>
-          <div><b>4</b><span>Send SOL to the checkout address shown by the system.</span></div>
-          <div><b>5</b><span>The backend verifies the finalized Solana transaction, recipient, amount and transaction uniqueness.</span></div>
-          <div><b>6</b><span>After verification, the qualifying service/order status updates automatically.</span></div>
-        </div>
-
-        <p class="notice">The blockchain can verify transactions; it does not guarantee investments, profits, business results, or the conduct of third parties.</p>
-      </section>
-
-      <section class="section cards cards-2">
-        <article id="reddit" class="card content-card">
-          <p class="eyebrow">REDDIT ARTICLES</p>
-          <h2>400+ Articles & Memoirs</h2>
-          <p>Featured writings, memoirs and updates gathered into one archive and refreshed when material is available.</p>
-          <a class="text-link" href="#account">Explore Articles →</a>
-        </article>
-
-        <article id="tiktok" class="card content-card">
-          <p class="eyebrow">TIKTOK</p>
-          <h2>Updates & Live Streams</h2>
-          <p>Follow <strong>@19nobodyknows22</strong> for current short-form updates and live streams.</p>
-          <a class="text-link" href="https://www.tiktok.com/@19nobodyknows22" target="_blank" rel="noopener noreferrer">Open TikTok →</a>
-        </article>
-      </section>
-
-
-      <section id="metaverse" class="section split">
-        <div>
-          <p class="eyebrow">SECOND LIFE / METAVERSE</p>
-          <h2>Enter the Boy King Tut Virtual World</h2>
+      <section class="section payment-section" aria-labelledby="payment-title">
+        <header class="section-heading">
+          <p class="kicker">SOLANA PAYMENT ENGINE</p>
+          <h2 id="payment-title">Simple, fast, verifiable</h2>
           <p>
-            Visit the public Boy King Tut experience inside Second Life. Explore the virtual environment,
-            meet other visitors, follow future events and access the experience from desktop or supported mobile devices.
+            Prices stay in USD while checkout converts the amount to SOL. The blockchain is used to verify the actual payment.
+          </p>
+        </header>
+
+        <div class="payment-flow" aria-label="Solana checkout flow">
+          <div><span>1</span><strong>Choose service</strong><small>Product or subscription</small></div>
+          <i>→</i>
+          <div><span>2</span><strong>Live SOL rate</strong><small>CoinGecko</small></div>
+          <i>→</i>
+          <div><span>3</span><strong>5-minute lock</strong><small>Exact SOL amount</small></div>
+          <i>→</i>
+          <div><span>4</span><strong>Send SOL</strong><small>Checkout wallet</small></div>
+          <i>→</i>
+          <div><span>5</span><strong>Verify on-chain</strong><small>Finalized transaction</small></div>
+        </div>
+
+        <div class="legal-band">
+          Blockchain verification proves a transaction occurred. It does not guarantee investment performance,
+          business results or the conduct of third parties.
+        </div>
+      </section>
+
+      <section class="section media-grid" aria-label="Content and community">
+        <article id="reddit" class="media-card">
+          <p class="kicker">REDDIT ARTICLES</p>
+          <h2>400+ Articles & Memoirs</h2>
+          <p>Featured writings, memoirs, observations and updates collected into one evolving archive.</p>
+          <a class="card-link" href="#account">Explore Articles <span>→</span></a>
+        </article>
+
+        <article id="tiktok" class="media-card">
+          <p class="kicker">TIKTOK</p>
+          <h2>Updates & Live Streams</h2>
+          <p>Follow <strong>@19nobodyknows22</strong> for new videos, short updates and live streams.</p>
+          <a class="card-link" href="https://www.tiktok.com/@19nobodyknows22" target="_blank" rel="noopener noreferrer">
+            Open TikTok <span>→</span>
+          </a>
+        </article>
+      </section>
+
+      <section id="metaverse" class="section metaverse-section" aria-labelledby="metaverse-title">
+        <div class="metaverse-content">
+          <p class="kicker">SECOND LIFE / METAVERSE</p>
+          <h2 id="metaverse-title">Enter the Boy King Tut Virtual World</h2>
+          <p class="lead-copy">
+            A public Second Life destination where visitors can explore the environment, meet others and access the
+            Boy King Tut virtual experience from desktop or supported mobile devices.
           </p>
 
-          <div class="pill-list">
+          <div class="destination-pills">
             <span>Public Access</span>
-            <span>3D Virtual World</span>
+            <span>Wild Hollow</span>
+            <span>91 / 153 / 2451</span>
             <span>Desktop</span>
-            <span>Mobile Access</span>
-            <span>Community</span>
+            <span>Mobile</span>
           </div>
 
           <div class="hero-actions">
-            <a
-              class="btn btn-primary"
-              href="https://maps.secondlife.com/secondlife/Wild%20Hollow/91/153/2451"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              TELEPORT NOW
+            <a class="button button-gold" href="https://maps.secondlife.com/secondlife/Wild%20Hollow/91/153/2451" target="_blank" rel="noopener noreferrer">
+              Teleport Now
             </a>
-            <a
-              class="btn btn-ghost"
-              href="https://go.secondlife.com/mobile"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              MOBILE ACCESS
+            <a class="button button-dark" href="https://go.secondlife.com/mobile" target="_blank" rel="noopener noreferrer">
+              Mobile Access
             </a>
           </div>
         </div>
 
-        <div class="card metaverse-card">
-          <p class="eyebrow">PUBLIC DESTINATION</p>
-          <h3>Wild Hollow</h3>
-          <div class="status-row"><span>Region</span><strong>Wild Hollow</strong></div>
-          <div class="status-row"><span>Coordinates</span><strong>91 / 153 / 2451</strong></div>
-          <div class="status-row"><span>Access</span><strong class="ok">OPEN TO PUBLIC</strong></div>
-          <div class="status-row"><span>Platform</span><strong>Second Life</strong></div>
-          <p class="fine">
-            Second Life account, viewer/app availability and platform access are provided by Linden Lab / Second Life
-            and may change independently of BoyKingTut.com.
-          </p>
-        </div>
+        <aside class="metaverse-display" aria-label="Second Life destination">
+          <div class="portal-ring">
+            <div class="portal-core">
+              <span>𓂀</span>
+              <strong>WILD HOLLOW</strong>
+              <small>OPEN TO PUBLIC</small>
+            </div>
+          </div>
+          <dl>
+            <div><dt>Region</dt><dd>Wild Hollow</dd></div>
+            <div><dt>Coordinates</dt><dd>91 / 153 / 2451</dd></div>
+            <div><dt>Platform</dt><dd>Second Life</dd></div>
+          </dl>
+        </aside>
       </section>
 
-      <section id="egypt" class="section split">
+      <section id="egypt" class="section egypt-section" aria-labelledby="egypt-title">
         <div>
-          <p class="eyebrow">EGYPT — INFORMATION & EDUCATION</p>
-          <h2>Explore Ancient Egypt</h2>
-          <p>Educational destination information covering the Grand Egyptian Museum, Giza, Abydos, Luxor, Saqqara, Dendera, Aswan, Abu Simbel and other destinations.</p>
-          <div class="pill-list">
-            <span>G.E.M.</span><span>Giza</span><span>Abydos</span><span>Luxor</span><span>Saqqara</span><span>Dendera</span><span>Aswan</span><span>Abu Simbel</span>
+          <p class="kicker">EGYPT — INFORMATION & EDUCATION</p>
+          <h2 id="egypt-title">Explore Ancient Egypt</h2>
+          <p class="lead-copy">
+            Destination information covering the Grand Egyptian Museum, Giza, Abydos, Luxor, Saqqara, Dendera,
+            Aswan, Abu Simbel and other important locations.
+          </p>
+
+          <div class="destination-pills">
+            <span>G.E.M.</span><span>Giza</span><span>Abydos</span><span>Luxor</span>
+            <span>Saqqara</span><span>Dendera</span><span>Aswan</span><span>Abu Simbel</span>
           </div>
         </div>
-        <div class="card">
-          <h3>Travel Notice</h3>
-          <p>BoyKingTut.com is not a travel agency, tour operator, airline, hotel provider or transportation company.</p>
-          <p>Travelers arrange their own flights. Any tours, hotels, transportation, guides or excursions must be arranged with independent third-party providers or local travel agents.</p>
-          <p class="fine">Prices, availability and entry requirements may change. Always verify current information directly with the appropriate provider or attraction.</p>
-        </div>
+
+        <aside class="travel-notice">
+          <p class="kicker">TRAVEL NOTICE</p>
+          <h3>Information only</h3>
+          <p>
+            BoyKingTut.com is not a travel agency, tour operator, airline, hotel provider or transportation company.
+          </p>
+          <p>
+            Travelers arrange their own flights. Any local tours, hotels, transportation, guides or excursions must be
+            arranged with independent third-party providers or local travel agents.
+          </p>
+          <small>Prices, availability and entry requirements may change. Always verify current information directly.</small>
+        </aside>
       </section>
 
-      <section id="faq" class="section">
-        <div class="section-head">
-          <p class="eyebrow">FAQ</p>
-          <h2>Common questions</h2>
-        </div>
+      <section id="faq" class="section" aria-labelledby="faq-title">
+        <header class="section-heading">
+          <p class="kicker">FAQ</p>
+          <h2 id="faq-title">Common questions</h2>
+        </header>
 
-        <div class="faq">
+        <div class="faq-grid">
           <details>
             <summary>How are Solana payments verified?</summary>
-            <p>The production backend will verify the transaction on-chain, including success/finalization, recipient, expected amount and whether the transaction has already been used.</p>
+            <p>The production backend will verify the finalized transaction, recipient, amount and transaction uniqueness directly on-chain.</p>
           </details>
           <details>
             <summary>Why is the checkout quote only valid for 5 minutes?</summary>
-            <p>SOL/USD can move quickly. A short quote window keeps the amount predictable. If it expires before payment, a new quote is generated.</p>
+            <p>SOL/USD can move quickly. The short lock keeps the required amount predictable for the active checkout.</p>
           </details>
           <details>
             <summary>Does it cost money to become an affiliate?</summary>
-            <p>No signup fee and no monthly affiliate platform fee are planned. Qualifying commission depends on referred clients becoming and remaining eligible paying subscribers under the program terms.</p>
+            <p>No signup fee and no monthly affiliate platform fee are planned. Qualifying commissions depend on eligible referred clients.</p>
           </details>
           <details>
             <summary>Can affiliates print their own brochures?</summary>
-            <p>Yes. The planned affiliate dashboard includes a personal referral code/link and printable promotional material.</p>
+            <p>Yes. The planned dashboard includes a personal affiliate code, referral link and printable brochure.</p>
           </details>
           <details>
             <summary>Is advertising performance guaranteed?</summary>
-            <p>No. Campaign results vary based on the business, location, offer, market, competition and other conditions.</p>
+            <p>No. Results vary by location, business, competition, season, offer and market conditions.</p>
+          </details>
+          <details>
+            <summary>Is BoyKingTut.com a travel agency?</summary>
+            <p>No. The Egypt section is informational and educational only. Travel arrangements are handled independently by travelers and third-party providers.</p>
           </details>
         </div>
       </section>
 
-      <section id="pricing" class="section">
-        <div class="section-head">
-          <p class="eyebrow">PRICING SNAPSHOT</p>
-          <h2>Current planned pricing</h2>
-        </div>
-        <div class="cards cards-4 pricing">
-          <article class="card"><small>CRYPTO BASIC</small><strong>$50</strong><span>/month</span></article>
-          <article class="card"><small>CRYPTO PRO</small><strong>$150</strong><span>/month</span></article>
-          <article class="card"><small>EXTRA PAIR</small><strong>$50</strong><span>each</span></article>
-          <article class="card"><small>ADVERTISING UPGRADE</small><strong>$399</strong><span>/month</span></article>
+      <section id="pricing" class="section pricing-section" aria-labelledby="pricing-title">
+        <header class="section-heading">
+          <p class="kicker">PRICING</p>
+          <h2 id="pricing-title">Current planned pricing</h2>
+        </header>
+
+        <div class="pricing-grid">
+          <article><small>CRYPTO BASIC</small><strong>$50</strong><span>/month</span></article>
+          <article><small>CRYPTO PRO</small><strong>$150</strong><span>/month</span></article>
+          <article><small>EXTRA PAIR</small><strong>$50</strong><span>each</span></article>
+          <article><small>SOLO MACHINE</small><strong>$300</strong><span>one time</span></article>
+          <article><small>SOLO MAINTENANCE</small><strong>$150–$300</strong><span>/month</span></article>
+          <article><small>ADVERTISING UPGRADE</small><strong>$399</strong><span>/month</span></article>
         </div>
       </section>
 
-      <section id="account" class="section account-cta">
-        <p class="eyebrow">ACCOUNT</p>
-        <h2>Google Login + role-based dashboards are next</h2>
-        <p>The next build phase will connect Google OAuth, customer/affiliate roles, Admin/Owner access, Discord signup webhooks, Solana checkout verification and persistent database records.</p>
-        <button class="btn btn-primary" type="button" disabled title="Google OAuth is wired in the next phase">CONTINUE WITH GOOGLE — NEXT PHASE</button>
+      <section id="account" class="section account-section" aria-labelledby="account-title">
+        <div>
+          <p class="kicker">ACCOUNT SYSTEM</p>
+          <h2 id="account-title">One login. Different dashboards.</h2>
+          <p>
+            Google Login, customer roles, affiliate dashboards, crypto dashboards and Owner/Admin access will be
+            connected in the backend phase.
+          </p>
+        </div>
+
+        <div class="account-actions">
+          <button class="button button-gold" type="button" disabled>Continue With Google — Backend Next</button>
+          <span>Customer • Affiliate • Crypto • Admin • Owner</span>
+        </div>
       </section>
     </main>
 
-    <footer>
-      <strong>BoyKingTut.com</strong>
-      <span>Financial Domination Quantum</span>
-      <nav>
-        <a href="#faq">FAQ</a>
+    <footer class="site-footer">
+      <div>
+        <strong>BoyKingTut.com</strong>
+        <span>Financial Domination Quantum</span>
+      </div>
+      <nav aria-label="Footer">
         <a href="#crypto">Crypto Risk</a>
         <a href="#affiliate">Affiliate Terms</a>
         <a href="#egypt">Travel Notice</a>
+        <a href="#faq">FAQ</a>
       </nav>
-      <p>18+ only. Crypto and leveraged trading are high risk. Nothing on this site is financial, investment, legal or tax advice.</p>
+      <p>
+        18+ only. Crypto and leveraged trading are high risk. Nothing on this site is financial, investment, legal or tax advice.
+      </p>
     </footer>
   </div>
 </BaseLayout>
