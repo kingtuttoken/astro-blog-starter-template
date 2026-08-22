@@ -6,17 +6,15 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "deploy": "npm run build && wrangler deploy",
-    "db:migrate:local": "wrangler d1 migrations apply boykingtut-db --local",
-    "db:migrate:remote": "wrangler d1 migrations apply boykingtut-db --remote"
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.2.3",
+    "@astrojs/rss": "^4.0.12",
     "astro": "^7.2.4"
   },
   "devDependencies": {
-    "wrangler": "^4.33.0",
-    "@cloudflare/workers-types": "^5.20260821.1"
+    "@cloudflare/workers-types": "^4.20260822.1",
+    "wrangler": "^4.125.0"
   }
 }
