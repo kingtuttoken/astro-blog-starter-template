@@ -41,10 +41,12 @@ import JobPopup from "../components/JobPopup.astro";
             <span>Solana payments</span>
             <span>Blockchain verification</span>
             <span>Desktop + mobile</span>
+            <span>Discord community</span>
           </div>
         </div>
 
-        <aside class="hero-console" aria-label="Platform overview">
+        <aside class="hero-console hero-image-panel" aria-label="Platform overview">
+          <img class="hero-image" src="/images/hero-boykingtut.jpg" alt="Boy King Tut themed crypto and metaverse visual" loading="eager" />
           <div class="console-head">
             <span class="console-dot"></span>
             <span>BOY KING TUT SYSTEM</span>
@@ -92,6 +94,7 @@ import JobPopup from "../components/JobPopup.astro";
 
         <div class="service-grid">
           <article id="crypto" class="service-card service-card-primary">
+            <img class="service-image" src="/images/crypto-solo.jpg" alt="Crypto and Solo Leverage Alarm visual" loading="lazy" />
             <div class="service-icon" aria-hidden="true">₿</div>
             <div>
               <p class="service-label">ONLINE CRYPTO SYSTEM</p>
@@ -126,6 +129,7 @@ import JobPopup from "../components/JobPopup.astro";
           </article>
 
           <article id="affiliate" class="service-card">
+            <img class="service-image" src="/images/affiliate-local.jpg" alt="Affiliate and local business network visual" loading="lazy" />
             <div class="service-icon" aria-hidden="true">♛</div>
             <div>
               <p class="service-label">AFFILIATES / MAKE MONEY</p>
@@ -314,6 +318,48 @@ import JobPopup from "../components/JobPopup.astro";
         </article>
       </section>
 
+
+      <section id="discord" class="section discord-section" aria-labelledby="discord-title">
+        <div class="discord-card">
+          <div class="discord-copy">
+            <p class="kicker">DISCORD COMMUNITY</p>
+            <h2 id="discord-title">Join the Boy King Tut Discord</h2>
+            <p class="lead-copy">
+              Community access, crypto member channels, affiliate onboarding, local advertising updates,
+              payment instructions, renewal reminders and system announcements can all connect through Discord.
+            </p>
+
+            <div class="destination-pills">
+              <span>Community</span>
+              <span>Crypto Access</span>
+              <span>Affiliate Updates</span>
+              <span>Renewal Reminders</span>
+              <span>System Notices</span>
+            </div>
+
+            <div class="hero-actions">
+              <a
+                class="button button-gold"
+                href="https://discord.gg/HA73BUfJ67"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join Discord
+              </a>
+            </div>
+          </div>
+
+          <aside class="discord-status" aria-label="Discord integration plan">
+            <div class="discord-mark" aria-hidden="true">💬</div>
+            <div class="status-row"><span>Invite</span><strong>ACTIVE</strong></div>
+            <div class="status-row"><span>New Customer Alerts</span><strong>WEBHOOK READY</strong></div>
+            <div class="status-row"><span>New Affiliate Alerts</span><strong>WEBHOOK READY</strong></div>
+            <div class="status-row"><span>Paid Order Alerts</span><strong>WEBHOOK READY</strong></div>
+            <div class="status-row"><span>Secrets</span><strong>CLOUDFLARE ONLY</strong></div>
+          </aside>
+        </div>
+      </section>
+
       <section id="metaverse" class="section metaverse-section" aria-labelledby="metaverse-title">
         <div class="metaverse-content">
           <p class="kicker">SECOND LIFE / METAVERSE</p>
@@ -342,6 +388,7 @@ import JobPopup from "../components/JobPopup.astro";
         </div>
 
         <aside class="metaverse-display" aria-label="Second Life destination">
+          <img class="metaverse-scene-image" src="/images/metaverse-wild-hollow.jpg" alt="Second Life Wild Hollow inspired virtual world visual" loading="lazy" />
           <div class="portal-ring">
             <div class="portal-core">
               <span>𓂀</span>
@@ -373,6 +420,7 @@ import JobPopup from "../components/JobPopup.astro";
         </div>
 
         <aside class="travel-notice">
+          <img class="egypt-scene-image" src="/images/egypt-travel.jpg" alt="Ancient Egypt travel and education visual" loading="lazy" />
           <p class="kicker">TRAVEL NOTICE</p>
           <h3>Information only</h3>
           <p>
@@ -441,7 +489,7 @@ import JobPopup from "../components/JobPopup.astro";
           <p class="kicker">ACCOUNT SYSTEM</p>
           <h2 id="account-title">One login. Different dashboards.</h2>
           <p>
-            Google Login, customer roles, affiliate dashboards, crypto dashboards and Owner/Admin access will be
+            Google Login, customer roles, affiliate dashboards, crypto dashboards, Discord-linked access and Owner/Admin access will be
             connected in the backend phase.
           </p>
         </div>
